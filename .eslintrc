@@ -1,0 +1,53 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 8,
+        "sourceType": "module"
+    },
+    "globals": {
+        "Promise": true
+    },
+    "plugins": [
+        "html",
+        "prettier",
+        "react"
+    ],
+    "rules": {
+        "no-unused-vars": 0,
+        "indent": [
+            "error",
+            4
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 160
+            }
+        ],
+        "array-bracket-spacing": [
+            "error",
+            "never"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "tabWidth": 4,
+                "printWidth": 120,
+                "singleQuote": true,
+                "jsxBracketSameLine": true,
+                "trailingComma": "none",
+                "parser": "flow"
+            }
+        ]
+    }
+}
