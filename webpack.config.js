@@ -1,18 +1,11 @@
 const path = require('path');
-// const webpack = require('webpack');
-// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: './src/portal.js',
-    // entry: {
-    //     admin: './src/admin/admin.js',
-    //     portal: './src/portal/portal.js'
-    // },
+    entry: './src/App.js',
     output: {
         path: path.resolve(__dirname, '.build'),
         filename: '[name].js'
-        // publicPath: 'http://cdn.example.com/assets/[hash]/'
     },
     resolve: {
         extensions: ['.js', '.jsx']
@@ -49,7 +42,7 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true
+                            modules: false
                         }
                     },
                     { loader: 'sass-loader' }
@@ -60,14 +53,13 @@ module.exports = {
                 use: [
                     { loader:'babel-loader' },
                 ]
-                // exclude: /node_modules/,
             }
         ]
     },
     plugins: [
         new CleanWebpackPlugin('.build'),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './public/index.html'
         })
     ]
 };
